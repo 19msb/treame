@@ -19,7 +19,7 @@ Before using `treame`, ensure the following:
 
 To use `treame`, follow these steps:
 
-1. **Copy Function**: Copy the `treame` function and `update_readme_you_are_here` helper function into your `.zshrc` file. You can do this manually or by running the following commands in your terminal:
+1. **Copy Function**: Copy the `treame` function and `update_readme_you_are_here` helper function into your `.zshrc` file. You can do this [manually](https://github.com/19msb/treame/blob/main/treame.txt) or by running the following command in your terminal:
 
    ```sh
    echo '
