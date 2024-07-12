@@ -1,8 +1,6 @@
-Certainly! Here's a sample README file that provides instructions on how to use the `treame` function, assuming you want to generate and customize `README.md` files with "YOU ARE HERE" indicators in your directory structure using Zsh:
-
----
-
 # README for `treame` Function
+
+**Warning**: The `treame` function will overwrite existing `README.md` files in your current directory and its subdirectories. Ensure that you have backups or that overwriting is acceptable before running `treame`.
 
 ## Overview
 
@@ -19,7 +17,7 @@ Before using `treame`, ensure the following:
 
 To use `treame`, follow these steps:
 
-1. **Copy Function**: Copy the `treame` function and `update_readme_you_are_here` helper function into your `.zshrc` file. You can do this [manually](https://github.com/19msb/treame/blob/main/treame.txt) or by running the following command in your terminal:
+1. **Copy Function**: Copy the `treame` function and `update_readme_you_are_here` helper function into your `.zshrc` file. You can do this [manually](https://github.com/19msb/treame/blob/main/treame.txt) or by referencing the `treame.txt` file located in this repository.
 
    ```sh
    echo '
@@ -32,7 +30,7 @@ To use `treame`, follow these steps:
        echo "'''"
      ) > README.md
      echo "Generated README.md in the current directory."
-
+   
      # Find all subdirectories (excluding hidden directories) and copy README.md to each
      find . -type d -not -path "*/\.*" | while read -r dir; do
        if [[ "$dir" != "." ]]; then
@@ -45,24 +43,24 @@ To use `treame`, follow these steps:
        fi
      done
      echo "README.md has been copied to all subdirectories."
-
+   
      # Update README.md files with "YOU ARE HERE"
      update_readme_you_are_here
-
+   
      # Display the contents of the root README.md
      cat README.md
    }
-
+   
    # Helper function to update README.md files with "YOU ARE HERE"
    update_readme_you_are_here() {
      local dir="${1:-.}"
-
+   
      # Handle the root directory
      if [ "$dir" = "." ]; then
        sed -i "" "s/root/root <- - - -( YOU ARE HERE )/" "./README.md"
        echo "Updated root README.md"
      fi
-
+   
      # Loop through each item in the directory
      for item in "$dir"/*; do
        if [ -d "$item" ]; then
@@ -77,7 +75,7 @@ To use `treame`, follow these steps:
          else
            echo "README.md not found in $item"
          fi
-
+   
          # Recursive call for subdirectories
          update_readme_you_are_here "$item"
        fi
@@ -86,7 +84,7 @@ To use `treame`, follow these steps:
    ' >> ~/.zshrc
    ```
 
-   This command will append the `treame` function and `update_readme_you_are_here` helper function to your `.zshrc` file.
+   Ensure that the `treame.txt` file contains the function definition for `treame` and `update_readme_you_are_here`.
 
 2. **Save and Apply Changes**: Save the `.zshrc` file. Then, restart your terminal session or use the command `source ~/.zshrc` to apply the changes and make the `treame` function available for use.
 
@@ -96,10 +94,6 @@ Once installed, follow these steps to use `treame`:
 
 1. **Navigate**: Navigate to the directory where you want to generate and customize `README.md` files using `treame`.
 
-2. **Run Command**: Simply type `treame` in your terminal and press Enter. This will execute the function, generate an initial `README.md` in the current directory, copy it to all subdirectories, customize each `README.md` file with "YOU ARE HERE" indicators, and display the contents of the root `README.md`.
+2. **Run Command**: Simply type `treame` in your terminal and press Enter. This will execute the function, generate an initial `README.md` in the current directory, copy it to all subdirectories (overwriting existing `README.md` files), customize each `README.md` file with "YOU ARE HERE" indicators, and display the contents of the root `README.md`.
 
 3. **Review**: Review the generated `README.md` files in each directory to see the updated directory structure with "YOU ARE HERE" indicators.
-
----
-
-This README provides a step-by-step guide on how to install and use the `treame` function effectively. Adjust the instructions as needed based on your specific setup and preferences.
