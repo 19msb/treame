@@ -1,0 +1,40 @@
+
+# README for `treame` Function
+
+**Warning**: The `treame` function will overwrite existing `README.md` files in your current directory and its subdirectories. Ensure that you have backups or that overwriting is acceptable before running `treame`.
+
+## Overview
+
+The `treame` function is designed to generate a tree of your working directory in a `README.md` file, copy it to all subdirectories within your working directory structure, and customize each copy with a "YOU ARE HERE" indicator. This makes it easier to navigate and understand the directory hierarchy at a glance.
+
+## Prerequisites
+
+Before using `treame`, ensure the following:
+
+1. **Zsh Shell**: You need to be using the Zsh shell.
+2. **`tree` Command**: Make sure the `tree` command is installed and available in your PATH. This command is used to generate directory tree.
+
+## Installation
+
+To use `treame`, follow these steps:
+
+1. **Copy Function**: Copy the `treame` function and `update_readme_you_are_here` helper function into your `.zshrc` file. You can do this manually or by referencing the `treame.txt` file located in this repository.
+
+   ```sh
+   # Append the contents of treame.txt to your .zshrc file
+   cat path/to/treame.txt >> ~/.zshrc
+   ```
+
+   Ensure that the `treame.txt` file contains the function definition for `treame` and `update_readme_you_are_here`.
+
+2. **Save and Apply Changes**: Save the `.zshrc` file. Then, restart your terminal session or use the command `source ~/.zshrc` to apply the changes and make the `treame` function available for use.
+
+## Usage
+
+Once installed, follow these steps to use `treame`:
+
+1. **Navigate**: Navigate to the directory where you want to generate and customize `README.md` files using `treame`.
+
+2. **Run Command**: Simply type `treame` in your terminal and press Enter. This will execute the function, generate an initial `README.md` in the current directory, copy it to all subdirectories (overwriting existing `README.md` files), customize each `README.md` file with "YOU ARE HERE" indicators, and display the contents of the root `README.md`.
+
+3. **Review**: Review the generated `README.md` files in each directory to see the updated directory structure with "YOU ARE HERE" indicators.
